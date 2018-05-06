@@ -3,21 +3,22 @@
 
 #if defined WIN32
 #include <freeglut.h>
+#include "../windows/SOIL.h"
 #elif defined __APPLE__
 #include <GLUT/glut.h>
+#include <SOIL.h>
 #else
 #include <GL/freeglut.h>
+#include <SOIL.h>
 #endif
 
-#include "RgbImage.h"
-
 class TexRect {
-//    float x;
-//    float y;
-//    float w;
-//    float h;
+public:
+    float x;
+    float y;
+    float w;
+    float h;
     GLuint texture_id;
-    GLuint texture_ie;
     GLuint texture_if;
     int rows;
     int cols;
@@ -26,46 +27,27 @@ class TexRect {
     int curr_col;
     
     bool complete;
-    
-    // MP4;
-    bool fire;
-    
-    // Final Project;
-    bool left, right, up, down;
-    
-public:
-    float x;
-    float y;
-    float w;
-    float h;
-    TexRect (const char*, const char*, int, int, float, float, float, float);
-    TexRect (const char*, int, int, float, float, float, float);
 
-    
-    bool done();
+
+    TexRect (const char*, float, float, float, float);
+    // TexRect (const char*, int, int, float, float,float, float);
     
     void draw();
     
-    // MP4;
     bool contains(float, float);
-    void setExplode();
     
-    // Final Project;
-    void drawReimu();
+    void moveUp(float rate=0.01);
+    void moveDown(float rate=0.01);
+    void moveLeft(float rate=0.01);
+    void moveRight(float rate=0.01);
     
-    void moveUp(float rate = 0.01);
-    void moveDown(float rate = 0.01);
-    void moveLeft(float rate = 0.01);
-    void moveRight(float rate = 0.01);
+    void jump();
     
-    void advance();
-    
-    void incY();
-    
-    void reset();
-    
-    //enemy
-    void falling();
+    bool rising;
+    bool movingLeft;
+   
+    float xinc;
+    float yinc;
 };
 
 #endif

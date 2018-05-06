@@ -3,12 +3,13 @@
 
 #include "GlutApp.h"
 #include "TexRect.h"
+#include "AnimatedRect.h"
+#include "bullet.h"
 
 class App: public GlutApp {
     // Maintain app state here
     float mx;
     float my;
-
 public:
     // Constructor, to initialize state
     App(const char* label, int x, int y, int w, int h);
@@ -16,31 +17,34 @@ public:
     // These are the events we want to handle
     void draw();
     void keyPress(unsigned char key);
-    void keyUp(unsigned char key);
     void mouseDown(float x, float y);
     void mouseDrag(float x, float y);
+    
+    void specialKeyPress(int key);
+    
+    void specialKeyUp(int key);
+    
     void idle();
     
-    bool isMoving;
+    // Final project:
+    TexRect* background;
     
-    // Final Project;
+    
+    TexRect* ball;
+    TexRect* platform;
+    // TexRect* background;
+    AnimatedRect* gameOver;
+    TexRect* mc;
+    
+    
     bool up;
     bool down;
     bool left;
     bool right;
     
     bool moving;
+    bool game_over;
     
-    
-    void specialKeyPress(int key);
-    void specialKeyUp(int key);
-    
-    TexRect* painting;
-    // TexRect* mushroom;
-    
-    
-    TexRect* enemy;
-    bool gamestart;
     
 };
 
