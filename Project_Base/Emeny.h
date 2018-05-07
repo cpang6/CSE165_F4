@@ -27,7 +27,7 @@ public:
     bool complete;
     
     
-    Emeny (const char*, float, float, float, float);
+    Emeny (const char*, float, float, float, float,float);
     // TexRect (const char*, int, int, float, float,float, float);
     
     void draw();

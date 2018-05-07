@@ -1,6 +1,7 @@
 #include "App.h"
 
 static App* singleton;
+static badGuys* pt;
 
 void app_timer(int value){
     if (singleton->game_over){
@@ -8,7 +9,7 @@ void app_timer(int value){
     }
 //    singleton->myBullet->advance();
     singleton->mc->advance();
-    
+    pt ->falling();
     if (singleton->moving){
         //        // singleton->ball->jump();
         //        float bx = singleton->ball->x + singleton->ball->w/2;
@@ -77,7 +78,7 @@ void app_timer(int value){
 
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
-    
+    pt = new badGuys();
     singleton = this;
     mx = 0.0;
     my = 0.0;
@@ -171,7 +172,7 @@ void App::draw() {
         singleton->mc->playerBullets[i]->draw();
     }
     
-    
+    pt ->draw();
     mc->draw();
     
     

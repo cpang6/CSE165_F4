@@ -6,6 +6,7 @@
 #include "AnimatedRect.h"
 #include "bullet.h"
 #include "Reimu.h"
+#include "badGuys.h"
 
 class App: public GlutApp {
     // Maintain app state here
