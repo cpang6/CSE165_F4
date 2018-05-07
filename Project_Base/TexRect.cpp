@@ -93,41 +93,41 @@ void TexRect::moveRight(float rate){
     }
 }
 
-void TexRect::jump(){
-    if(rising){
-        y+=yinc;
-        if (movingLeft){
-            x -=xinc;
-        }
-        else {
-            x +=xinc;
-        }
-    }
-    else {
-        y-=yinc;
-        if (movingLeft){
-            x -=xinc;
-        }
-        else{
-            x +=xinc;
-        }
-    }
-    
-    if (y > 0.99){
-        rising = false;
-    }
-    if ((y-h) < -0.99){
-        rising = true;
-    }
-    if (x < -0.99) {
-        movingLeft = false;
-       
-    }
-    if (x+w > 0.99) {
-        movingLeft = true;
-        
-    }
-}
+//void TexRect::jump(){
+//    if(rising){
+//        y+=yinc;
+//        if (movingLeft){
+//            x -=xinc;
+//        }
+//        else {
+//            x +=xinc;
+//        }
+//    }
+//    else {
+//        y-=yinc;
+//        if (movingLeft){
+//            x -=xinc;
+//        }
+//        else{
+//            x +=xinc;
+//        }
+//    }
+//    
+//    if (y > 0.99){
+//        rising = false;
+//    }
+//    if ((y-h) < -0.99){
+//        rising = true;
+//    }
+//    if (x < -0.99) {
+//        movingLeft = false;
+//       
+//    }
+//    if (x+w > 0.99) {
+//        movingLeft = true;
+//        
+//    }
+//}
 
 
 

@@ -11,12 +11,12 @@ class bullet {
     // float xVel; // Velocity of bullet in X-Direction
     
     float yVel; // Velocity of bullet in Y-Direction
-    
     float speed; // set speed of bullet in direction it's going
-    float xPos; // position of bullet in the X-Direction
-    float yPos; // position of bullet in the Y-Direction
+//    float xPos; // position of bullet in the X-Direction
+//    float yPos; // position of bullet in the Y-Direction
     bool fFire; // determine if bullet is from MC or Enemy
     bool contact; // Check if the bullet has come in contact with the enemy/MC (based on the value of friendlyFire)
+    bool rising;
     
     float x;
     float y;
@@ -26,6 +26,8 @@ class bullet {
     bool fire;
     
     GLuint texture_id;
+    
+    
     
 
     
@@ -39,7 +41,7 @@ public:
     
     void bulletMov (float, float, float, float, bool);
     void drawBullet();
-    
+    void advance();
     
     
 };

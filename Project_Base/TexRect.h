@@ -12,6 +12,8 @@
 #include <SOIL.h>
 #endif
 
+#include "bullet.h"
+
 class TexRect {
 public:
     float x;

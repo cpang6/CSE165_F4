@@ -1,14 +1,14 @@
 #include "bullet.h"
 
-void bullet::bulletMov (float yVel, float speed, float xPos, float yPos, bool fFire) {
-    
-    this->yVel = yVel;
-    this->speed = speed;
-    this->xPos = xPos;
-    this->yPos = yPos;
-    this->fFire = fFire;
-    
-}
+//void bullet::bulletMov (float yVel, float speed, float xPos, float yPos, bool fFire) {
+//
+//    this->yVel = yVel;
+//    this->speed = speed;
+//    this->xPos = xPos;
+//    this->yPos = yPos;
+//    this->fFire = fFire;
+//
+//}
 
 bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, float h = 0.5) {
     
@@ -34,6 +34,7 @@ bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, f
     this->y = y;
     this->w = w;
     this->h = h;
+    speed = 0.04;
     
     fire = false;
     
@@ -43,6 +44,11 @@ bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, f
     //    xinc = 0.01;
     //    yinc = 0.01;
 }
+
+void bullet::advance(){
+    y += speed;
+}
+
 
 void bullet::drawBullet(){
     //if (fire) {
@@ -72,7 +78,6 @@ void bullet::drawBullet(){
 
 void bullet::setFire() {
     fire = true;
-    drawBullet();
 }
 
 void bullet::stopFire() {

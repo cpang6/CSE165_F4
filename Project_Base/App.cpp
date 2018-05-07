@@ -2,12 +2,13 @@
 
 static App* singleton;
 
-//void app_timer(int value){
-//    if (singleton->game_over){
-//        singleton->gameOver->advance();
-//    }
-//
-//    if (singleton->moving){
+void app_timer(int value){
+    if (singleton->game_over){
+        singleton->gameOver->advance();
+    }
+    singleton->myBullet->advance();
+
+    if (singleton->moving){
 //        // singleton->ball->jump();
 //        float bx = singleton->ball->x + singleton->ball->w/2;
 //        float by = singleton->ball->y - singleton->ball->h + 0.1;
@@ -27,51 +28,51 @@ static App* singleton;
 //
 //        }
 //    }
-//    if (singleton->up) {
-//        singleton->platform->moveUp(0.05);
-//    }
-//    if (singleton->down) {
-//        singleton->platform->moveDown(0.05);
-//    }
-//    if (singleton->left) {
-//        singleton->platform->moveLeft(0.05);
-//    }
-//    if (singleton->right) {
-//        singleton->platform->moveRight(0.05);
-//    }
-//
-//    if (singleton->game_over){
-//        singleton->redraw();
-//        glutTimerFunc(100, app_timer, value);
-//    }
-//    else {
-//        if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
-//            singleton->redraw();
-//            glutTimerFunc(16, app_timer, value);
-//        }
-//    }
-//
-
-//}
-
-void move(int value){
-    if (singleton->up){
+    if (singleton->up) {
         singleton->mc->moveUp(0.02);
     }
-    if (singleton->down){
+    if (singleton->down) {
         singleton->mc->moveDown(0.04);
     }
-    if (singleton->left){
+    if (singleton->left) {
         singleton->mc->moveLeft(0.04);
     }
-    if (singleton->right){
+    if (singleton->right) {
         singleton->mc->moveRight(0.04);
     }
-    if (singleton->up || singleton->down || singleton->left || singleton->right){
+
+    if (singleton->game_over){
         singleton->redraw();
-        glutTimerFunc(32, move, value);
+        glutTimerFunc(100, app_timer, value);
+    }
+    else {
+        if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
+            singleton->redraw();
+            glutTimerFunc(16, app_timer, value);
+        }
     }
 }
+}
+
+//void move(int value){
+//    singleton->myBullet->advance();
+//    if (singleton->up){
+//        singleton->mc->moveUp(0.02);
+//    }
+//    if (singleton->down){
+//        singleton->mc->moveDown(0.04);
+//    }
+//    if (singleton->left){
+//        singleton->mc->moveLeft(0.04);
+//    }
+//    if (singleton->right){
+//        singleton->mc->moveRight(0.04);
+//    }
+//    if (singleton->up || singleton->down || singleton->left || singleton->right){
+//        singleton->redraw();
+//        glutTimerFunc(32, move, value);
+//    }
+//}
 
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
@@ -97,7 +98,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     moving = true;
     game_over = false;
     
-    //app_timer(1);
+    app_timer(1);
 
 }
 
@@ -119,7 +120,7 @@ void App::specialKeyPress(int key){
 //            myBullet->setFire();
 //            redraw();
 //    }
-    move(1);
+//    move(1);
     }
     
 }
