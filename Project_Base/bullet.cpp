@@ -51,7 +51,7 @@ void bullet::advance(){
 
 //enemy
 void bullet::drop(){
-    y -= speed;
+    y -= 3*speed;
 }
 
 

@@ -9,7 +9,8 @@
 #include <GL/freeglut.h>
 #include <SOIL.h>
 #endif
-
+#include "bullet.h"
+#include <vector>
 class Emeny {
 public:
     float x;
@@ -46,5 +47,10 @@ public:
     
     float xinc;
     float yinc;
+    //for bullet
+    std::vector<bullet*> playerBullets;
+    void drop();
+    void shoot();
+    void bulletdraw();
 };
 

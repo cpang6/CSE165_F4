@@ -80,6 +80,19 @@ bool Emeny::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 
+void Emeny::drop(){
+    for(int i = 0; i < playerBullets.size(); i++){
+    
+        playerBullets[i]->drop();
+    }
+}
 
+void Emeny::shoot(){
+    playerBullets.push_back(new bullet("images/compass.png", x+w/8, y, 0.10, 0.10));
+}
 
-
+void Emeny::bulletdraw(){
+    for (int i = 0; i < playerBullets.size();i++){
+        playerBullets[i]->draw();
+    }
+}

@@ -8,9 +8,22 @@ void app_timer(int value){
         singleton->gameOver->advance();
     }
 //    singleton->myBullet->advance();
-    singleton->mc->advance();
-    pt ->falling();
+    //singleton->mc->advance();
+    
+//    pt->bulletdrop();
+//    pt ->bulletshoot();
+    
+    //pt ->falling();
     if (singleton->moving){
+        singleton->mc->advance();
+        pt ->falling();
+        if (pt->contain(singleton->mc->x, singleton->mc->y)){
+            singleton->moving = false;
+            singleton->game_over = true;
+            singleton->gameOver->animate();
+        }
+        
+        
         //        // singleton->ball->jump();
         //        float bx = singleton->ball->x + singleton->ball->w/2;
         //        float by = singleton->ball->y - singleton->ball->h + 0.1;
@@ -172,6 +185,7 @@ void App::draw() {
         singleton->mc->playerBullets[i]->draw();
     }
     
+    pt -> drawbullet();
     pt ->draw();
     mc->draw();
     
@@ -209,7 +223,12 @@ void App::keyPress(unsigned char key) {
         //        delete gameOver;
         //        delete background;
         //        delete this;
-        //
+        delete singleton;
+        delete pt;
+        delete gameOver;
+        delete background;
+        delete mc;
+        //delete this;
         exit(0);
     }
     

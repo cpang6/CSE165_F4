@@ -13,6 +13,7 @@
 #include <vector>
 #include<iostream>
 #include "Emeny.h"
+#include "bullet.h"
 using namespace std;
 class badGuys{
 public:
@@ -28,14 +29,20 @@ public:
     void falling();
     //void interval();
     
-    void addAngelo();
-    void addArman();
+    void addAngelo(float x);
+    void addArman(float x);
     void allEnemies();
     void draw();
+    bool contain(float,float);
     
     std::vector <Emeny*> bad;
+    std::vector<bullet*> playerBullets;
     
     ~badGuys();
+    
+    void bulletdrop();
+    void bulletshoot();
+    void drawbullet();
     
     
     

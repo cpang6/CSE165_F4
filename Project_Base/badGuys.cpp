@@ -6,22 +6,22 @@ badGuys::badGuys(){
     timeinbetween = 20;
     starttime = 0;
     randomT = 20;
-    addArman();
+    addArman(x);
     x = 0;
 }
 
 void badGuys::falling(){
     starttime +=1;
     randomT = (rand()%30)+1;
-    x = float((rand())/float(RAND_MAX) * (2)) - 1;
-    cout << x<< endl;
+    //x = float((rand())/float(RAND_MAX) * (1.98)) - 0.99;
+    //cout << x<< endl;
     if (starttime > (randomT + 40)){
     
     if (starttime % 2 == 0){
-        addArman();
+        addArman(x);
     }
-    if (starttime % 10 == 0){
-        addAngelo();
+    if (starttime % 9 == 0){
+        addAngelo(x);
     }
     starttime = 0;
     }
@@ -35,15 +35,26 @@ void badGuys::falling(){
     
 }
 
-void badGuys::addAngelo(){
+void badGuys::addAngelo(float x){
     //cout << x<< endl;
-    bad.push_back(new Emeny("images/boss.png", (float((rand())/float(RAND_MAX) * (2)) - 1), 0.99, 0.2, 0.22,speed));
-    
+    this ->x = x;
+    x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
+    cout << x<< endl;
+    bad.push_back(new Emeny("images/boss.png", x, 0.99, 0.2, 0.22,speed));
+    //playerBullets.push_back(new bullet("images/compass.png", xx+0.2/8, 0.9, 0.10, 0.10));
+//    for (int i = 0; i < bad.size();i++){
+//        bad[i]->shoot();
+//    }
 }
 
-void badGuys::addArman(){
+void badGuys::addArman(float x){
     //cout << x<< endl;
-    bad.push_back(new Emeny("images/arman.png", (float((rand())/float(RAND_MAX) * (2)) - 1), 0.99, 0.2, 0.22,speed));
+    this ->x = x;
+    x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
+    cout << x<< endl;
+    bad.push_back(new Emeny("images/arman.png", x, 0.99, 0.2, 0.22,speed));
+    
+    //playerBullets.push_back(new bullet("images/compass.png", xx+0.2/8, 0.9, 0.10, 0.10));
 }
 
 void badGuys::draw(){
@@ -58,6 +69,37 @@ void badGuys::redraw(){
     starttime = 0;
     randomT = 20;
     x = 0;
+}
+
+bool badGuys::contain(float x,float y){
+    for (int i = 0; i < bad.size();i++){
+        if(bad[i]->contains(x,y))
+            return true;
+       
+    }
+    return false;
+}
+
+
+
+//bullet
+void badGuys::bulletdrop(){
+    for (int i = 0; i < bad.size();i++){
+        bad[i]->drop();
+    }
+}
+
+void badGuys::bulletshoot(){
+    for (int i = 0; i < bad.size();i++){
+        bad[i]->shoot();
+    }
+    
+}
+
+void badGuys::drawbullet(){
+    for (int i = 0; i < bad.size();i++){
+        bad[i]->bulletdraw();
+    }
 }
 
 badGuys::~badGuys(){
