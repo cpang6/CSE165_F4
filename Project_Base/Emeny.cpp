@@ -27,7 +27,8 @@ Emeny::Emeny (const char* filename, float x = 0, float y = 0, float w = 0.5, flo
     this->h = h;
     
     rising = false;
-    movingLeft = true;
+    movingDown = true;
+    
     
     xinc = 0.01;
     yinc = 0.01;
@@ -88,39 +89,49 @@ void Emeny::moveRight(float rate){
 }
 
 void Emeny::jump(){
-    if(rising){
-        y+=yinc;
-        if (movingLeft){
-            x -=xinc;
-        }
-        else {
-            x +=xinc;
-        }
-    }
-    else {
+//    if(rising){
+//        y+=yinc;
+//        if (movingLeft){
+//            x -=xinc;
+//        }
+//        else {
+//            x +=xinc;
+//        }
+//    }
+//    else {
+//        y-=yinc;
+//        if (movingLeft){
+//            x -=xinc;
+//        }
+//        else{
+//            x +=xinc;
+//        }
+//    }
+//
+//    if (y > 0.99){
+//        rising = false;
+//    }
+//    if ((y-h) < -0.99){
+//        rising = true;
+//    }
+//    if (x < -0.99) {
+//        movingLeft = false;
+//
+//    }
+//    if (x+w > 0.99) {
+//        movingLeft = true;
+//
+//    }
+    
+    
+    if (movingDown)
         y-=yinc;
-        if (movingLeft){
-            x -=xinc;
-        }
-        else{
-            x +=xinc;
-        }
+    
+    
+    if ((y-h) < -0.99){
+        movingDown = true;
     }
     
-    if (y > 0.99){
-        rising = false;
-    }
-    if ((y-h) < -0.99){
-        rising = true;
-    }
-    if (x < -0.99) {
-        movingLeft = false;
-        
-    }
-    if (x+w > 0.99) {
-        movingLeft = true;
-        
-    }
 }
 
 
