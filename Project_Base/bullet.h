@@ -40,7 +40,7 @@ public:
     void stopFire();
     
     void bulletMov (float, float, float, float, bool);
-    void drawBullet();
+    void draw();
     void advance();
     
     

@@ -7,6 +7,7 @@ void app_timer(int value){
         singleton->gameOver->advance();
     }
     singleton->myBullet->advance();
+    singleton->mc->advance();
 
     if (singleton->moving){
 //        // singleton->ball->jump();
@@ -89,7 +90,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     background = new TexRect("images/background.png", -1, 1, 2, 2);
     
-    mc = new TexRect("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
+    mc = new Reimu("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
     myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
     
     
@@ -117,8 +118,11 @@ void App::specialKeyPress(int key){
             down = true;
         }
 //        if (key == ' '){
-//            myBullet->setFire();
-//            redraw();
+//            singleton->mc->shoot();
+//        }
+//        if (key == ' '){
+////            myBullet->setFire();
+////            redraw();
 //    }
 //    move(1);
     }
@@ -162,7 +166,10 @@ void App::draw() {
     // platform->draw();
     // ball->draw();
     gameOver->draw();
-    myBullet->drawBullet();
+    myBullet->draw();
+    for (int i = 0; i < singleton->mc->playerBullets.size(); i++){
+        singleton->mc->playerBullets[i]->draw();
+    }
 
 
     mc->draw();
@@ -203,6 +210,10 @@ void App::keyPress(unsigned char key) {
 //        delete this;
 //
         exit(0);
+    }
+    
+    if (key == ' '){
+        singleton->mc->shoot();
     }
 
         

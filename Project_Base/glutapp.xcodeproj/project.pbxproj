@@ -17,6 +17,7 @@
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17FD33DD208FF94C00C7FC56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */; };
 		52640F5B209E99C1003E37F6 /* Emeny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52640F59209E99C1003E37F6 /* Emeny.cpp */; };
+		C95E566F20A02EEE003F1ABA /* Reimu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C95E566D20A02EED003F1ABA /* Reimu.cpp */; };
 		C9736C74209E901900002A68 /* bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9736C72209E901900002A68 /* bullet.cpp */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		17FD33DB208FF55B00C7FC56 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
 		52640F59209E99C1003E37F6 /* Emeny.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Emeny.cpp; sourceTree = "<group>"; };
 		52640F5A209E99C1003E37F6 /* Emeny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Emeny.h; sourceTree = "<group>"; };
+		C95E566D20A02EED003F1ABA /* Reimu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reimu.cpp; sourceTree = "<group>"; };
+		C95E566E20A02EED003F1ABA /* Reimu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reimu.h; sourceTree = "<group>"; };
 		C9736C72209E901900002A68 /* bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bullet.cpp; sourceTree = "<group>"; };
 		C9736C73209E901900002A68 /* bullet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bullet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +79,8 @@
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
 				1749D6471E9D3D5C0038BC46 /* TexRect.h */,
+				C95E566D20A02EED003F1ABA /* Reimu.cpp */,
+				C95E566E20A02EED003F1ABA /* Reimu.h */,
 				1708B5402091F634007BA7C1 /* AnimatedRect.cpp */,
 				1708B5412091F634007BA7C1 /* AnimatedRect.h */,
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
@@ -170,6 +175,7 @@
 				C9736C74209E901900002A68 /* bullet.cpp in Sources */,
 				1708B5422091F634007BA7C1 /* AnimatedRect.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
+				C95E566F20A02EEE003F1ABA /* Reimu.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1749D6481E9D3D5C0038BC46 /* TexRect.cpp in Sources */,
 				52640F5B209E99C1003E37F6 /* Emeny.cpp in Sources */,

@@ -34,7 +34,7 @@ bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, f
     this->y = y;
     this->w = w;
     this->h = h;
-    speed = 0.04;
+    speed = 0.01;
     
     fire = false;
     
@@ -50,7 +50,7 @@ void bullet::advance(){
 }
 
 
-void bullet::drawBullet(){
+void bullet::draw(){
     //if (fire) {
         glBindTexture( GL_TEXTURE_2D, texture_id );
         glEnable(GL_TEXTURE_2D);
