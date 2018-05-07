@@ -56,16 +56,16 @@ static App* singleton;
 
 void move(int value){
     if (singleton->up){
-        singleton->mc->moveUp(0.05);
+        singleton->mc->moveUp(0.02);
     }
     if (singleton->down){
-        singleton->mc->moveDown(0.05);
+        singleton->mc->moveDown(0.04);
     }
     if (singleton->left){
-        singleton->mc->moveLeft(0.05);
+        singleton->mc->moveLeft(0.04);
     }
     if (singleton->right){
-        singleton->mc->moveRight(0.05);
+        singleton->mc->moveRight(0.04);
     }
     if (singleton->up || singleton->down || singleton->left || singleton->right){
         singleton->redraw();
@@ -105,15 +105,15 @@ void App::specialKeyPress(int key){
         if (key == 100){
             left = true;
         }
-//        if (key == 101){
-//            up = true;
-//        }
+        if (key == 101){
+            up = true;
+        }
         if (key == 102){
             right = true;
         }
-//        if (key == 103){
-//            down = true;
-//        }
+        if (key == 103){
+            down = true;
+        }
     }
     move(1);
 }
