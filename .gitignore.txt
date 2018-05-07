@@ -6,7 +6,6 @@
 *.exe
 *.o
 *.d
-glutapp
 *.so
 
 # Packages #
