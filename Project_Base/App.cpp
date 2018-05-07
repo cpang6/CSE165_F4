@@ -2,31 +2,31 @@
 
 static App* singleton;
 
-//void app_timer(int value){
-//    if (singleton->game_over){
-//        singleton->gameOver->advance();
-//    }
-//
-//    if (singleton->moving){
-//        // singleton->ball->jump();
-//        float bx = singleton->ball->x + singleton->ball->w/2;
-//        float by = singleton->ball->y - singleton->ball->h + 0.1;
-//        if (singleton->platform->contains(bx, by)){
-//            singleton->ball->rising = true;
-//            singleton->ball->yinc +=0.005;
-//            singleton->ball->xinc = singleton->ball->yinc;
-//            if (singleton->ball->yinc > 0.15){
-//                singleton->ball->yinc = 0.15;
-//            }
-//        }
-//
-//        if (singleton->ball->y - singleton->ball->h < -0.99){
-//            singleton->moving = false;
-//            singleton->game_over = true;
-//            singleton->gameOver->animate();
-//
-//        }
-//    }
+void app_timer(int value){
+    if (singleton->game_over){
+        singleton->gameOver->advance();
+    }
+
+    if (singleton->moving){
+        // singleton->ball->jump();
+        float bx = singleton->ball->x + singleton->ball->w/2;
+        float by = singleton->ball->y - singleton->ball->h + 0.1;
+        if (singleton->platform->contains(bx, by)){
+            singleton->ball->rising = true;
+            singleton->ball->yinc +=0.005;
+            singleton->ball->xinc = singleton->ball->yinc;
+            if (singleton->ball->yinc > 0.15){
+                singleton->ball->yinc = 0.15;
+            }
+        }
+
+        if (singleton->ball->y - singleton->ball->h < -0.99){
+            singleton->moving = false;
+            singleton->game_over = true;
+            singleton->gameOver->animate();
+
+        }
+    }
 //    if (singleton->up) {
 //        singleton->platform->moveUp(0.05);
 //    }
@@ -39,20 +39,20 @@ static App* singleton;
 //    if (singleton->right) {
 //        singleton->platform->moveRight(0.05);
 //    }
-//
-//    if (singleton->game_over){
-//        singleton->redraw();
-//        glutTimerFunc(100, app_timer, value);
-//    }
-//    else {
-//        if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
-//            singleton->redraw();
-//            glutTimerFunc(16, app_timer, value);
-//        }
-//    }
-//
 
-//}
+    if (singleton->game_over){
+        singleton->redraw();
+        glutTimerFunc(100, app_timer, value);
+    }
+    else {
+        if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
+            singleton->redraw();
+            glutTimerFunc(16, app_timer, value);
+        }
+    }
+
+
+}
 
 void move(int value){
     if (singleton->up){
@@ -84,19 +84,16 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     // ball = new TexRect("images/mushroom.png", 0, 0.67, 0.2, 0.2);
     // platform = new TexRect("images/board.png", 0, -0.7, 0.6, 0.2);
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
-    
-    
     background = new TexRect("images/background.png", -1, 1, 2, 2);
     
-    mc = new TexRect("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
-    
+    mc = new player("images/reimovement.png", 1, 8, -0.1, -0.6, 0.15, 0.22);
     
     up = down = left = right = false;
     
     moving = true;
     game_over = false;
     
-    // app_timer(1);
+    app_timer(1);
 
 }
 
@@ -171,31 +168,27 @@ void App::mouseDrag(float x, float y){
 
 }
 
-void App::idle(){
-
-}
+void App::idle(){}
 
 void App::keyPress(unsigned char key) {
+    // Exit the app when Esc key is pressed
     if (key == 27){
-        // Exit the app when Esc key is pressed
+        delete mc;
+        delete gameOver;
+        delete background;
+        delete this;
         
-//        delete ball;
-//        delete platform;
-//        delete gameOver;
-//        delete background;
-//        delete this;
-//
         exit(0);
     }
     
-    if (key == ' '){
-        ball->x = 0;
-        ball->y = 0.67;
-        ball->yinc = 0.01;
-        ball->xinc = 0.01;
-        ball->rising = false;
-        game_over = false;
-        gameOver->stop();
-        moving = true;
-    }
+//    if (key == ' '){
+//        ball->x = 0;
+//        ball->y = 0.67;
+//        ball->yinc = 0.01;
+//        ball->xinc = 0.01;
+//        ball->rising = false;
+//        game_over = false;
+//        gameOver->stop();
+//        moving = true;
+//    }
 }

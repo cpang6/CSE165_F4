@@ -8,3 +8,6 @@ void bullet::bulletMov (float yVel, float speed, float xPos, float yPos, bool fF
     this->yPos = yPos;
     this->fFire = fFire;
 }
+
+void bullet::drawBullet(){}
+

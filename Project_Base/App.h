@@ -5,6 +5,7 @@
 #include "TexRect.h"
 #include "AnimatedRect.h"
 #include "bullet.h"
+#include "player.h"
 
 class App: public GlutApp {
     // Maintain app state here
@@ -34,7 +35,7 @@ public:
     TexRect* platform;
     // TexRect* background;
     AnimatedRect* gameOver;
-    TexRect* mc;
+    player* mc;
     
     
     bool up;

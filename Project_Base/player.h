@@ -1,5 +1,5 @@
-#ifndef AnimatedRect_h
-#define AnimatedRect_h
+#ifndef player_h
+#define player_h
 
 #if defined WIN32
 #include <freeglut.h>
@@ -12,12 +12,12 @@
 #include <SOIL.h>
 #endif
 
-class AnimatedRect {
+class player {
     float x;
     float y;
     float w;
     float h;
-    GLuint texture_map_id;
+    GLuint texture_id;
     
     int rows;
     int cols;
@@ -29,7 +29,8 @@ class AnimatedRect {
     bool animating;
     
 public:
-    AnimatedRect (const char*, int, int, float, float, float, float);
+    player (const char*, float, float, float, float);
+    player (const char*, int, int, float, float, float, float);
     
     bool done();
     
@@ -44,6 +45,21 @@ public:
     void animate();
     
     void stop();
+        
+    bool contains(float, float);
+    
+    void moveUp(float rate=0.01);
+    void moveDown(float rate=0.01);
+    void moveLeft(float rate=0.01);
+    void moveRight(float rate=0.01);
+    
+    void jump();
+    
+    bool rising;
+    bool movingLeft;
+    
+    float xinc;
+    float yinc;
 };
 
 #endif
