@@ -49,6 +49,11 @@ void bullet::advance(){
     y += speed;
 }
 
+//enemy
+void bullet::drop(){
+    y -= speed;
+}
+
 
 void bullet::draw(){
     //if (fire) {

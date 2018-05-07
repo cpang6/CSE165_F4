@@ -1,31 +1,26 @@
-//
-//  badGuys.cpp
-//  glutapp
-//
-//  Created by Test on 5/6/18.
-//  Copyright © 2018 Angelo Kyrilov. All rights reserved.
-//
 
 #include "badGuys.h"
 
 badGuys::badGuys(){
-    speed = 0.05;
+    speed = 0.01;
     timeinbetween = 20;
     starttime = 0;
     randomT = 20;
+    addArman();
     x = 0;
 }
 
 void badGuys::falling(){
     starttime +=1;
-    randomT = (rand()%20)+1;
+    randomT = (rand()%30)+1;
     x = float((rand())/float(RAND_MAX) * (2)) - 1;
-    if (starttime > (randomT + 10)){
+    cout << x<< endl;
+    if (starttime > (randomT + 40)){
     
     if (starttime % 2 == 0){
         addArman();
     }
-    if (starttime % 5 == 0){
+    if (starttime % 10 == 0){
         addAngelo();
     }
     starttime = 0;
@@ -41,12 +36,14 @@ void badGuys::falling(){
 }
 
 void badGuys::addAngelo(){
-    bad.push_back(new Emeny("images/boss.png", 0, 0.99, 0.2, 0.22,speed));
+    //cout << x<< endl;
+    bad.push_back(new Emeny("images/boss.png", (float((rand())/float(RAND_MAX) * (2)) - 1), 0.99, 0.2, 0.22,speed));
     
 }
 
 void badGuys::addArman(){
-    bad.push_back(new Emeny("images/mushroom.png", 0, 0.99, 0.2, 0.22,speed));
+    //cout << x<< endl;
+    bad.push_back(new Emeny("images/arman.png", (float((rand())/float(RAND_MAX) * (2)) - 1), 0.99, 0.2, 0.22,speed));
 }
 
 void badGuys::draw(){

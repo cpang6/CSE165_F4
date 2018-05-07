@@ -11,7 +11,9 @@
 #endif
 #include <stdio.h>
 #include <vector>
+#include<iostream>
 #include "Emeny.h"
+using namespace std;
 class badGuys{
 public:
     float speed;
