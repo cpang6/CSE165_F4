@@ -89,6 +89,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     background = new TexRect("images/background.png", -1, 1, 2, 2);
     
     mc = new TexRect("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
+    myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
     
     
     up = down = left = right = false;
@@ -96,7 +97,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     moving = true;
     game_over = false;
     
-    // app_timer(1);
+    //app_timer(1);
 
 }
 
@@ -114,11 +115,16 @@ void App::specialKeyPress(int key){
         if (key == 103){
             down = true;
         }
-    }
+//        if (key == ' '){
+//            myBullet->setFire();
+//            redraw();
+//    }
     move(1);
+    }
+    
 }
 
-void App::specialKeyUp(int key){
+void App::specialKeyUp(int key) {
     if (key == 100) {
         left = false;
     }
@@ -131,6 +137,12 @@ void App::specialKeyUp(int key){
     if (key == 103) {
         down = false;
     }
+    
+//    if (key == ' ') {
+//        myBullet->stopFire();
+//        redraw();
+//    }
+//
 }
 
 void App::draw() {
@@ -149,7 +161,11 @@ void App::draw() {
     // platform->draw();
     // ball->draw();
     gameOver->draw();
+    myBullet->drawBullet();
+
+
     mc->draw();
+
     
     // We have been drawing everything to the back buffer
     // Swap the buffers to see the result of what we drew
@@ -187,15 +203,7 @@ void App::keyPress(unsigned char key) {
 //
         exit(0);
     }
+
+        
     
-    if (key == ' '){
-        ball->x = 0;
-        ball->y = 0.67;
-        ball->yinc = 0.01;
-        ball->xinc = 0.01;
-        ball->rising = false;
-        game_over = false;
-        gameOver->stop();
-        moving = true;
-    }
 }

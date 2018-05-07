@@ -35,6 +35,7 @@ public:
     // TexRect* background;
     AnimatedRect* gameOver;
     TexRect* mc;
+    bullet* myBullet;
     
     
     bool up;

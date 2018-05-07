@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 
+#include "TexRect.h"
+
 class bullet {
     
     // float xVel; // Velocity of bullet in X-Direction
@@ -16,12 +18,28 @@ class bullet {
     bool fFire; // determine if bullet is from MC or Enemy
     bool contact; // Check if the bullet has come in contact with the enemy/MC (based on the value of friendlyFire)
     
+    float x;
+    float y;
+    float w;
+    float h;
+    
+    bool fire;
+    
+    GLuint texture_id;
+    
+
+    
+    
     // Speed will represent distance it will travel in one second (1000 milliseconds)
     // friendlyFire will determine if bullet will interact with MC or Enemy
 public:
+    bullet (const char*, float, float, float, float);
+    void setFire();
+    void stopFire();
     
     void bulletMov (float, float, float, float, bool);
     void drawBullet();
+    
     
     
 };
