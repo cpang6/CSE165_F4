@@ -20,21 +20,21 @@ void badGuys::falling(){
     starttime +=1;
     randomT = (rand()%20)+1;
     x = float((rand())/float(RAND_MAX) * (2)) - 1;
-    //if (starttime > (randomT + 10)){
+    if (starttime > (randomT + 10)){
     
-    //if (starttime % 2 == 0){
-    addArman();
-    //}
+    if (starttime % 2 == 0){
+        addArman();
+    }
     if (starttime % 5 == 0){
         addAngelo();
     }
     starttime = 0;
-    // }
+    }
     
     for (int i = 0; i < bad.size();i++){
-        //        if(bad[i]->y<-2){
-        //            bad.erase(bad.begin()+i-1);
-        //        }
+                if(bad[i]->y<-2){
+                    bad.erase(bad.begin()+i-1);
+                }
         bad[i]->jump();
     }
     
@@ -53,6 +53,14 @@ void badGuys::draw(){
     for (int i = 0; i < bad.size();i++){
         bad[i]->draw();
     }
+}
+
+void badGuys::redraw(){
+    speed = 0.05;
+    timeinbetween = 20;
+    starttime = 0;
+    randomT = 20;
+    x = 0;
 }
 
 badGuys::~badGuys(){

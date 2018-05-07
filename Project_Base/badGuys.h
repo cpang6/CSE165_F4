@@ -19,7 +19,7 @@ public:
     int starttime;
     int randomT;
     int x;
-    void reset();
+    void redraw();
     
     badGuys();
     
