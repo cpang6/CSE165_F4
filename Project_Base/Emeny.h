@@ -42,7 +42,7 @@ public:
     void jump();
     
     bool rising;
-    bool movingLeft;
+    bool movingDown;
     
     float xinc;
     float yinc;
