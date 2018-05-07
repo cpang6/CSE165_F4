@@ -96,11 +96,10 @@ void Reimu::moveRight(float rate){
 void Reimu::shoot(){
 //    playerBullets.push_back(new bullet("images/bullet.png", 0, 0, 0.10, 0.10));
 
-    playerBullets.push_back(new bullet("images/bullet.png", x, y, 0.10, 0.10));
+    playerBullets.push_back(new bullet("images/bullet.png", x+w/8, y, 0.10, 0.10));
 
 }
 void Reimu::advance(){
-        printf("shoot was called");
     for(int i = 0; i < playerBullets.size(); i++){
 //        playerBullets[i]->setSpeed(speed);
         //deletes offscreen bones
