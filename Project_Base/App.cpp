@@ -6,53 +6,53 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
-    singleton->myBullet->advance();
+//    singleton->myBullet->advance();
     singleton->mc->advance();
-
+    
     if (singleton->moving){
-//        // singleton->ball->jump();
-//        float bx = singleton->ball->x + singleton->ball->w/2;
-//        float by = singleton->ball->y - singleton->ball->h + 0.1;
-//        if (singleton->platform->contains(bx, by)){
-//            singleton->ball->rising = true;
-//            singleton->ball->yinc +=0.005;
-//            singleton->ball->xinc = singleton->ball->yinc;
-//            if (singleton->ball->yinc > 0.15){
-//                singleton->ball->yinc = 0.15;
-//            }
-//        }
-//
-//        if (singleton->ball->y - singleton->ball->h < -0.99){
-//            singleton->moving = false;
-//            singleton->game_over = true;
-//            singleton->gameOver->animate();
-//
-//        }
-//    }
-    if (singleton->up) {
-        singleton->mc->moveUp(0.02);
-    }
-    if (singleton->down) {
-        singleton->mc->moveDown(0.04);
-    }
-    if (singleton->left) {
-        singleton->mc->moveLeft(0.04);
-    }
-    if (singleton->right) {
-        singleton->mc->moveRight(0.04);
-    }
-
-    if (singleton->game_over){
-        singleton->redraw();
-        glutTimerFunc(100, app_timer, value);
-    }
-    else {
-        if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
+        //        // singleton->ball->jump();
+        //        float bx = singleton->ball->x + singleton->ball->w/2;
+        //        float by = singleton->ball->y - singleton->ball->h + 0.1;
+        //        if (singleton->platform->contains(bx, by)){
+        //            singleton->ball->rising = true;
+        //            singleton->ball->yinc +=0.005;
+        //            singleton->ball->xinc = singleton->ball->yinc;
+        //            if (singleton->ball->yinc > 0.15){
+        //                singleton->ball->yinc = 0.15;
+        //            }
+        //        }
+        //
+        //        if (singleton->ball->y - singleton->ball->h < -0.99){
+        //            singleton->moving = false;
+        //            singleton->game_over = true;
+        //            singleton->gameOver->animate();
+        //
+        //        }
+        //    }
+        if (singleton->up) {
+            singleton->mc->moveUp(0.02);
+        }
+        if (singleton->down) {
+            singleton->mc->moveDown(0.04);
+        }
+        if (singleton->left) {
+            singleton->mc->moveLeft(0.04);
+        }
+        if (singleton->right) {
+            singleton->mc->moveRight(0.04);
+        }
+        
+        if (singleton->game_over){
             singleton->redraw();
-            glutTimerFunc(16, app_timer, value);
+            glutTimerFunc(100, app_timer, value);
+        }
+        else {
+            if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
+                singleton->redraw();
+                glutTimerFunc(16, app_timer, value);
+            }
         }
     }
-}
 }
 
 //void move(int value){
@@ -82,7 +82,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     mx = 0.0;
     my = 0.0;
     
-//    background = new TexRect("images/sky.png", -1, 1, 2, 2);
+    //    background = new TexRect("images/sky.png", -1, 1, 2, 2);
     // ball = new TexRect("images/mushroom.png", 0, 0.67, 0.2, 0.2);
     // platform = new TexRect("images/board.png", 0, -0.7, 0.6, 0.2);
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
@@ -91,7 +91,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     background = new TexRect("images/background.png", -1, 1, 2, 2);
     
     mc = new Reimu("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
-    myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
+//    myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
     
     
     up = down = left = right = false;
@@ -100,7 +100,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     game_over = false;
     
     app_timer(1);
-
+    
 }
 
 void App::specialKeyPress(int key){
@@ -117,14 +117,14 @@ void App::specialKeyPress(int key){
         if (key == 103){
             down = true;
         }
-//        if (key == ' '){
-//            singleton->mc->shoot();
-//        }
-//        if (key == ' '){
-////            myBullet->setFire();
-////            redraw();
-//    }
-//    move(1);
+        //        if (key == ' '){
+        //            singleton->mc->shoot();
+        //        }
+        //        if (key == ' '){
+        ////            myBullet->setFire();
+        ////            redraw();
+        //    }
+        //    move(1);
     }
     
 }
@@ -143,15 +143,15 @@ void App::specialKeyUp(int key) {
         down = false;
     }
     
-//    if (key == ' ') {
-//        myBullet->stopFire();
-//        redraw();
-//    }
-//
+    //    if (key == ' ') {
+    //        myBullet->stopFire();
+    //        redraw();
+    //    }
+    //
 }
 
 void App::draw() {
-
+    
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
     
@@ -166,14 +166,14 @@ void App::draw() {
     // platform->draw();
     // ball->draw();
     gameOver->draw();
-    myBullet->draw();
+//    myBullet->draw();
     for (int i = 0; i < singleton->mc->playerBullets.size(); i++){
         singleton->mc->playerBullets[i]->draw();
     }
-
-
+    
+    
     mc->draw();
-
+    
     
     // We have been drawing everything to the back buffer
     // Swap the buffers to see the result of what we drew
@@ -185,37 +185,37 @@ void App::mouseDown(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::mouseDrag(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::idle(){
-
+    
 }
 
 void App::keyPress(unsigned char key) {
     if (key == 27){
         // Exit the app when Esc key is pressed
         
-//        delete ball;
-//        delete platform;
-//        delete gameOver;
-//        delete background;
-//        delete this;
-//
+        //        delete ball;
+        //        delete platform;
+        //        delete gameOver;
+        //        delete background;
+        //        delete this;
+        //
         exit(0);
     }
     
     if (key == ' '){
         singleton->mc->shoot();
     }
-
-        
+    
+    
     
 }
