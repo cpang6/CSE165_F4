@@ -24,29 +24,31 @@ public:
     int x,r;
     int count;
     void redraw();
-    
-    
+
+
     badGuys();
-    
+
     void falling();
     //void interval();
-    
+
     void addAngelo(float x);
     void addArman(float x);
     void allEnemies();
     void draw();
-    bool contain(float,float);
-    
+    bool contain(float x,float y);
+    bool collision(float x2, float y2);
+
     std::vector <Emeny*> bad;
     std::vector<bullet*> playerBullets;
-    
+
     ~badGuys();
-    
+
     void bulletdrop();
     void bulletshoot();
     void drawbullet();
     bool ishit;
-    
-    
-    
+
+
+
+
 };

@@ -11,6 +11,7 @@
 #endif
 #include "bullet.h"
 #include <vector>
+#include <cmath>
 class Emeny {
 public:
     float x;

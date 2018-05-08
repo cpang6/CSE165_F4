@@ -81,6 +81,11 @@ void Reimu::advance(){
     }
 }
 
+/*
+bool Reimu::collision(float x2, float y2) {
+
+}
+*/
 
 void Reimu::draw(){
     glBindTexture( GL_TEXTURE_2D, texture_id );
