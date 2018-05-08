@@ -19,7 +19,7 @@ void app_timer(int value){
 //            singleton->game_over = true;
 //            singleton->gameOver->animate();
 //        }
-        if (pt->contain(singleton->mc->getbulletx(), singleton->mc->getbullety())){
+        if (pt->contain(singleton->mc->x, singleton->mc->getbullety())){
             singleton->moving = false;
             singleton->game_over = true;
             singleton->mc->shooting = false;

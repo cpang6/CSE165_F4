@@ -121,7 +121,7 @@ void Reimu::bulletdraw(){
 float Reimu::getbulletx(){
     float position = 0;
     for (int i = 0; i < playerBullets.size();i++){
-        position = playerBullets[i]->getx();
+        position = playerBullets[i]->x;
     }
     return position;
 }
