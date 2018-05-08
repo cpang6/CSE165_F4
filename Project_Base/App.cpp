@@ -20,6 +20,7 @@ void app_timer(int value){
         if (pt->contain(singleton->mc->x, singleton->mc->y) || pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
             singleton->moving = false;
             singleton->game_over = true;
+            singleton->mc->shooting = false;
             singleton->gameOver->animate();
         }
         if (pt->contain(singleton->mc->getbulletx(), singleton->mc->getbullety())){

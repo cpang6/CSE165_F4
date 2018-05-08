@@ -123,7 +123,3 @@ void TexRect::draw(){
 bool TexRect::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
-
-
-
-
