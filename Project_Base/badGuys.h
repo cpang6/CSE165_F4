@@ -14,6 +14,7 @@
 #include<iostream>
 #include "Emeny.h"
 #include "bullet.h"
+#include "AnimatedRect.h"
 using namespace std;
 class badGuys{
 public:
@@ -42,7 +43,9 @@ public:
 
     
     std::vector <Emeny*> bad;
+    std::vector <AnimatedRect*> explosions;
     std::vector<bullet*> playerBullets;
+    AnimatedRect* explosion;
     
     ~badGuys();
     

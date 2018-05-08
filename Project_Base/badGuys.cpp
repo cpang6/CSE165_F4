@@ -11,9 +11,13 @@ badGuys::badGuys(){
     count = 0;
     x = 0;
     ishit = true;
+    explosion = new AnimatedRect("images/bye.png",1,11, 0.0, 0.0, .2, .2);
 }
 
 void badGuys::falling(){
+//    for (int i = 0; i < explosions.size();i++){
+//        explosions[i]->animate();
+//    }
     starttime +=1;
     randomT = (rand()%30)+1;
     //x = float((rand())/float(RAND_MAX) * (1.98)) - 0.99;
@@ -60,6 +64,11 @@ void badGuys::draw(){
     for (int i = 0; i < bad.size();i++){
         bad[i]->draw();
     }
+//    explosion->draw();
+    for (int i = 0; i < explosions.size();i++){
+        explosions[i]->draw();
+    }
+    
 }
 
 //void badGuys::redraw(){
@@ -94,6 +103,14 @@ int badGuys::whatContain(float x,float y){
 }
 
 void badGuys::deleteBad(int i){
+    explosions.push_back(new AnimatedRect("images/bye.png",1,11, bad[i]->x, bad[i]->y, .4, .4));
+    explosions.back()->animate();
+    // + bad[i]->w/14
+
+//    explosions.push_back(new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2));
+//    printf("being drawn\n");
+//    draw();
+    //vector pushback new explosion
     bad[i]->x = 3;
 }
 
@@ -138,6 +155,7 @@ void badGuys::drawbullet(){
     for (int i = 0; i < bad.size();i++){
         bad[i]->bulletdraw();
     }
+    
     
 }
 

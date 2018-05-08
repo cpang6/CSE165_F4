@@ -10,6 +10,17 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
+    if (!(pt->explosions.empty())){
+        for (int i = 0; i < pt->explosions.size(); i++){
+            pt->explosions[i]->advance();
+            if (pt->explosions[i]->frameNumber == 11){
+                pt->explosions[i]->stop();
+            }
+        }
+    }
+    pt->explosion->advance();
+
+    
     if (singleton->moving){
         singleton->mc->advance();
         pt ->falling();
@@ -43,6 +54,10 @@ void app_timer(int value){
         singleton->mc->moveRight(0.04);
     }
     
+//    if (!(pt->explosions.empty())){
+//        singleton->redraw();
+//        glutTimerFunc(100, app_timer, value);
+//    }
     if (singleton->game_over){
         singleton->redraw();
         glutTimerFunc(100, app_timer, value);
@@ -67,6 +82,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     background = new TexRect("images/background.png", -1, 1, 2, 2);
     mc = new Reimu("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
+
     
     up = down = left = right = false;
     

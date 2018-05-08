@@ -24,6 +24,8 @@ AnimatedRect::AnimatedRect (const char* map_filename, int rows, int cols, float 
     this->rows = rows;
     this->cols = cols;
     
+    frameNumber = 0;
+    
     this->x = x;
     this->y = y;
     this->w = w;
@@ -84,6 +86,7 @@ void AnimatedRect::incY(){
 }
 
 void AnimatedRect::advance(){
+    frameNumber++;
     if (curr_col < cols){
         curr_col++;
     }

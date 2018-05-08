@@ -19,6 +19,7 @@ class AnimatedRect {
     float h;
     GLuint texture_map_id;
     
+    
     int rows;
     int cols;
     
@@ -28,6 +29,8 @@ class AnimatedRect {
     bool complete;
     bool animating;
 public:
+    int frameNumber;
+
     AnimatedRect (const char*, int, int, float, float, float, float);
     
     bool done();
