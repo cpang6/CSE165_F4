@@ -196,12 +196,13 @@ void App::keyPress(unsigned char key) {
         singleton->mc->shoot();
     }
     
-    //    if (key = 'r'){
-    //        game_over = false;
-    //        gameOver->stop();
-    //        moving = true;
-    //        pt->redraw();
-    //    }
+//    if (key = 'r'){
+//        game_over = false;
+//        gameOver->stop();
+//        moving = true;
+//        mc->draw();
+//        pt->draw();
+//    }
     
     
 }
