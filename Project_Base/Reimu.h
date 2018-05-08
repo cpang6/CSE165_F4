@@ -33,7 +33,6 @@ public:
     
     float firerate;
 
-
     Reimu (const char*, float, float, float, float);
     // Reimu (const char*, int, int, float, float,float, float);
     
