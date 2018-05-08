@@ -16,7 +16,7 @@ void badGuys::falling(){
     //x = float((rand())/float(RAND_MAX) * (1.98)) - 0.99;
     //cout << x<< endl;
     if (starttime > (randomT + 40)){
-    
+
     if (starttime % 2 == 0){
         addArman(x);
     }
@@ -25,14 +25,14 @@ void badGuys::falling(){
     }
     starttime = 0;
     }
-    
+
     for (int i = 0; i < bad.size();i++){
                 if(bad[i]->y<-2){
                     bad.erase(bad.begin()+i-1);
                 }
         bad[i]->jump();
     }
-    
+
 }
 
 void badGuys::addAngelo(float x){
@@ -53,18 +53,14 @@ void badGuys::addArman(float x){
     x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
     cout << x<< endl;
     bad.push_back(new Emeny("images/arman.png", x, 0.99, 0.2, 0.22,speed));
-    
+
     //playerBullets.push_back(new bullet("images/compass.png", xx+0.2/8, 0.9, 0.10, 0.10));
 }
 
 void badGuys::draw(){
-    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->draw();
-        count++;
-        
     }
-    cout << "drawtimes count "<<count<<endl;
 }
 
 void badGuys::redraw(){
@@ -79,7 +75,7 @@ bool badGuys::contain(float x,float y){
     for (int i = 0; i < bad.size();i++){
         if(bad[i]->contains(x,y))
             return true;
-       
+
     }
     return false;
 }
@@ -90,28 +86,20 @@ bool badGuys::contain(float x,float y){
 void badGuys::bulletdrop(){
     for (int i = 0; i < bad.size();i++){
         bad[i]->drop();
-        cout << "drop?"<<endl;
     }
 }
 
 void badGuys::bulletshoot(){
-    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->shoot();
-        count ++;
-        
     }
-    cout << "bullettimes count "<<count<<endl;
-    
+
 }
 
 void badGuys::drawbullet(){
-    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->bulletdraw();
-        count++;
     }
-    cout << "drawbullettimes count "<<count<<endl;
 }
 
 badGuys::~badGuys(){

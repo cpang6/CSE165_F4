@@ -74,8 +74,9 @@ void Reimu::advance(){
 //            bones.erase(bones.begin() + i-1);
 //        }
         //this should make bullets move up, damage implemented elsewhere
-        if (playerBullets[i]->OOB == true) {
+        if (playerBullets[i]->OOB() == false) {
           //delete function for bullet
+          playerBullets.erase(playerBullets.begin()+i-1);
         }
         else {
           playerBullets[i]->advance();
