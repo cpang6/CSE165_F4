@@ -88,7 +88,7 @@ void Emeny::drop(){
 }
 
 void Emeny::shoot(){
-    playerBullets.push_back(new bullet("images/compass.png", x+w/7, y, 0.10, 0.10));
+    playerBullets.push_back(new bullet("images/compassSmall.png", x+w/7, y, 0.10, 0.10));
 }
 
 void Emeny::bulletdraw(){
