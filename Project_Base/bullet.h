@@ -51,6 +51,8 @@ public:
     bool bullety();
     
     void cleanbullet();
+    
+    bool bulletcontain(float,float);
 
 
 };

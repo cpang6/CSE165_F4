@@ -41,7 +41,7 @@ void badGuys::falling(){
 void badGuys::addAngelo(float x){
     //cout << x<< endl;
     this ->x = x;
-    x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
+    x = float((rand())/float(RAND_MAX) * (1.6)) - 0.9;
     cout << x<< endl;
     bad.push_back(new Emeny("images/boss.png", x, 0.99, 0.4, 0.44,speed));
 
@@ -130,4 +130,13 @@ void badGuys::drawbullet(){
 
 badGuys::~badGuys(){
     bad.clear();
+}
+
+bool badGuys::bulletcotaincheck(float mx,float my){
+    for (int i = 0; i < bad.size();i++){
+        if (bad[i]->bulletcontains(mx, my))
+            return true;
+    }
+    return false;
+    
 }

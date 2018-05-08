@@ -107,3 +107,11 @@ bool Emeny::outofB(){
 void Emeny::cleanB(int i){
     playerBullets.erase(playerBullets.begin()+i-1);
 }
+
+bool Emeny::bulletcontains(float mx, float my){
+    for (int i = 0; i < playerBullets.size();i++){
+        if (playerBullets[i]->bulletcontain(mx, my))
+            return true;
+    }
+    return 0;
+}

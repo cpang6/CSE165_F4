@@ -55,5 +55,6 @@ public:
     void speed();
     bool outofB();
     void cleanB(int i);
+    bool bulletcontains(float,float);
 };
 

@@ -46,6 +46,7 @@ public:
     void bulletshoot();
     void drawbullet();
     bool ishit;
+    bool bulletcotaincheck(float, float);
     
     
     
