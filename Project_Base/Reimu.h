@@ -25,38 +25,41 @@ public:
     GLuint texture_if;
     int rows;
     int cols;
-    
+
     int curr_row;
     int curr_col;
-    
+
     bool complete;
-    
+
     float firerate;
 
 
     Reimu (const char*, float, float, float, float);
     // Reimu (const char*, int, int, float, float,float, float);
-    
+
     void draw();
-    
+
     bool contains(float, float);
-    
+
     void moveUp(float rate=0.01);
     void moveDown(float rate=0.01);
     void moveLeft(float rate=0.01);
     void moveRight(float rate=0.01);
-    
-    
+
+
     std::vector<bullet*> playerBullets;
     void shoot();
     void jump();
     void advance();
-    
+    bool collision(float x2, float y2);
+
     bool rising;
     bool movingLeft;
-   
+
     float xinc;
     float yinc;
+
+    void bulletdraw();
 };
 
 #endif

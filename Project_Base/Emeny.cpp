@@ -1,7 +1,7 @@
 #include "Emeny.h"
 
 
-Emeny::Emeny (const char* filename, float x = 0, float y = 0, float w = 0.5, float h = 0.5) {
+Emeny::Emeny (const char* filename, float x = 0, float y = 0, float w = 0.5, float h = 0.5,float rate = 0.01) {
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -31,97 +31,13 @@ Emeny::Emeny (const char* filename, float x = 0, float y = 0, float w = 0.5, flo
     
     
     xinc = 0.01;
-    yinc = 0.01;
+    yinc = rate;
 }
 
-//TexRect::TexRect (const char* filename, int rows, int cols, float x=0, float y=0, float w=0.5, float h=0.5){
-//    glClearColor (0.0, 0.0, 0.0, 0.0);
-//    glShadeModel(GL_FLAT);
-//    glEnable(GL_DEPTH_TEST);
-//
-//    RgbImage theTexMap3( filename );
-//
-//    glGenTextures( 1, &texture_if );
-//    glBindTexture( GL_TEXTURE_2D, texture_if );
-//
-//    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, theTexMap3.GetNumCols(), theTexMap3.GetNumRows(),
-//                      GL_RGB, GL_UNSIGNED_BYTE, theTexMap3.ImageData() );
-//
-//    this->texture_if = texture_if;
-//
-//    this->rows = rows;
-//    this->cols = cols;
-//
-//    this->x = x;
-//    this->y = y;
-//    this->w = w;
-//    this->h = h;
-//
-//    curr_row = 1;
-//    curr_col = 1;
-//
-//    complete = false;
-//
-//    // Final Project;
-//    // left = right = up = down = false;
-//
-//
-//}
 
-
-void Emeny::moveUp(float rate){
-    y += rate;
-}
-void Emeny::moveDown(float rate){
-    y -= rate;
-}
-void Emeny::moveLeft(float rate){
-    x -= rate;
-    if (x < -0.99){
-        x = -0.99;
-    }
-}
-void Emeny::moveRight(float rate){
-    x += rate;
-    if (x + w > 0.99){
-        x = 0.99 - w;
-    }
-}
 
 void Emeny::jump(){
-//    if(rising){
-//        y+=yinc;
-//        if (movingLeft){
-//            x -=xinc;
-//        }
-//        else {
-//            x +=xinc;
-//        }
-//    }
-//    else {
-//        y-=yinc;
-//        if (movingLeft){
-//            x -=xinc;
-//        }
-//        else{
-//            x +=xinc;
-//        }
-//    }
-//
-//    if (y > 0.99){
-//        rising = false;
-//    }
-//    if ((y-h) < -0.99){
-//        rising = true;
-//    }
-//    if (x < -0.99) {
-//        movingLeft = false;
-//
-//    }
-//    if (x+w > 0.99) {
-//        movingLeft = true;
-//
-//    }
+
     
     
     if (movingDown)
@@ -164,6 +80,30 @@ bool Emeny::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 
+void Emeny::drop(){
+    for(int i = 0; i < playerBullets.size(); i++){
+    
+        playerBullets[i]->drop();
+    }
+}
 
+void Emeny::shoot(){
+    playerBullets.push_back(new bullet("images/compassSmall.png", x+w/7, y, 0.10, 0.10));
+}
 
+void Emeny::bulletdraw(){
+    for (int i = 0; i < playerBullets.size();i++){
+        playerBullets[i]->draw();
+    }
+}
 
+bool Emeny::outofB(){
+    for (int i = 0; i < playerBullets.size();i++){
+        playerBullets[i]->OOB();
+    }
+    return 0;
+}
+
+void Emeny::cleanB(int i){
+    playerBullets.erase(playerBullets.begin()+i-1);
+}
