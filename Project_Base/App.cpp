@@ -222,13 +222,23 @@ void App::keyPress(unsigned char key) {
         singleton->mc->shoot();
     }
     
-//    if (key = 'r'){
+    if (key = 'r'){
+//        if (gameOver){
 //        game_over = false;
 //        gameOver->stop();
 //        moving = true;
 //        mc->draw();
 //        pt->draw();
-//    }
+//
+//        for (int i = 0; i < pt->bad.size();i++){
+////            for (int j = 0; j < pt->bad[i]->playerBullets.size(); j++){
+////                pt->bad[i]->playerBullets[j]->x = 3;
+////            }
+//            pt->deleteBad(i);
+//        }
+//        }
+
+    }
     
     
 }

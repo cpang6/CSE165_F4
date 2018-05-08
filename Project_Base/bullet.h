@@ -18,7 +18,7 @@ class bullet {
     bool contact; // Check if the bullet has come in contact with the enemy/MC (based on the value of friendlyFire)
     bool rising;
 
-    float x;
+
     float y;
     float w;
     float h;
@@ -35,6 +35,7 @@ class bullet {
     // Speed will represent distance it will travel in one second (1000 milliseconds)
     // friendlyFire will determine if bullet will interact with MC or Enemy
 public:
+    float x;
     bullet (const char*, float, float, float, float);
     void setFire();
     void stopFire();
