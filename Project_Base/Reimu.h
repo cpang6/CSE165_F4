@@ -54,6 +54,8 @@ public:
     
     bool rising;
     bool movingLeft;
+    
+    bool shooting;
    
     float xinc;
     float yinc;

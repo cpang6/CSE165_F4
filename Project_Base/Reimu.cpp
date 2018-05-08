@@ -28,6 +28,8 @@ Reimu::Reimu (const char* filename, float x = 0, float y = 0, float w = 0.5, flo
 
     rising = false;
     movingLeft = true;
+    
+    shooting = true;
 
     xinc = 0.01;
     yinc = 0.01;
@@ -61,9 +63,11 @@ void Reimu::moveRight(float rate){
 }
 
 void Reimu::shoot(){
-    playerBullets.push_back(new bullet("images/bullet.png", x+w/8, y, 0.20, 0.20));
-
+    if (shooting) {
+        playerBullets.push_back(new bullet("images/bullet.png", x+w/8, y, 0.10, 0.10));
+    }
 }
+    
 void Reimu::advance(){
     for(int i = 0; i < playerBullets.size(); i++){
 //        playerBullets[i]->setSpeed(speed);
