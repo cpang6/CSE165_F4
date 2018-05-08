@@ -1,8 +1,11 @@
-
 #include "App.h"
+#include <iostream>   // std::cout
+#include <string>    
+
 
 static App* singleton;
 static badGuys* pt;
+int endScore = 0;
 
 void app_timer(int value){
     if (singleton->game_over){
@@ -94,27 +97,48 @@ void app_timer(int value){
 //    }
 //}
 
+void App::PrintText(int x, int y, std::string String){
+    //(x,y) is from the bottom left of the window
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    glOrtho(0, WindowWidth, 0, WindowHeight, -1.0f, 1.0f);
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    glPushAttrib(GL_DEPTH_TEST);
+    glDisable(GL_DEPTH_TEST);
+    glRasterPos2i(x,y);
+    for (int i=0; i<String.size(); i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_9_BY_15, String[i]);
+    }
+    glPopAttrib();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
+    glPopMatrix();
+}
+
+
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
     pt = new badGuys();
     singleton = this;
     mx = 0.0;
     my = 0.0;
+    hiScore = new highScore(endScore);
 
-    int score = 0;
 
     //    background = new TexRect("images/sky.png", -1, 1, 2, 2);
     // ball = new TexRect("images/mushroom.png", 0, 0.67, 0.2, 0.2);
     // platform = new TexRect("images/board.png", 0, -0.7, 0.6, 0.2);
     
-
-
     background = new TexRect("images/background.png", -1, 1, 2, 2);
 
     mc = new Reimu("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
 //    myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
-
 
     up = down = left = right = false;
 
@@ -185,6 +209,12 @@ void App::draw() {
     glLoadIdentity();
 
     background->draw();
+
+    if (moving){
+            endScore = gameTick/8;
+            PrintText(560, 580, std::to_string(endScore));
+            PrintText(410, 580,hiScore->getScore());
+          }
     // platform->draw();
     // ball->draw();
 
@@ -201,15 +231,15 @@ void App::draw() {
 //
 //      }
 //    }
-
-
     singleton -> mc->bulletdraw();
 
     pt -> drawbullet();
     pt ->draw();
     mc->draw();
     
-        gameOver->draw();
+    gameOver->draw();
+    hiScore->checkScore(endScore);
+
 
 
 

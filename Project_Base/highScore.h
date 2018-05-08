@@ -14,5 +14,4 @@ void checkScore(int);
 std::string getScore();
 
 
-
 };
