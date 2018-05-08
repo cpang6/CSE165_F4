@@ -14,7 +14,12 @@ void app_timer(int value){
         pt ->falling();
         pt ->bulletshoot();
         
-        if (pt->contain(singleton->mc->x, singleton->mc->y)||pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
+//        if (pt->contain(singleton->mc->x, singleton->mc->y)||pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
+//            singleton->moving = false;
+//            singleton->game_over = true;
+//            singleton->gameOver->animate();
+//        }
+        if (pt->contain(singleton->mc->getbulletx(), singleton->mc->getbullety())){
             singleton->moving = false;
             singleton->game_over = true;
             singleton->gameOver->animate();

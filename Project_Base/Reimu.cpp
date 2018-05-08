@@ -61,7 +61,7 @@ void Reimu::moveRight(float rate){
 }
 
 void Reimu::shoot(){
-    playerBullets.push_back(new bullet("images/bullet.png", x+w/8, y, 0.10, 0.10));
+    playerBullets.push_back(new bullet("images/bullet.png", x+w/8, y, 0.20, 0.20));
 
 }
 void Reimu::advance(){
@@ -112,4 +112,20 @@ void Reimu::bulletdraw(){
     for(int i = 0; i < playerBullets.size(); i++){
         playerBullets[i]->draw();
     }
+}
+
+float Reimu::getbulletx(){
+    float position = 0;
+    for (int i = 0; i < playerBullets.size();i++){
+        position = playerBullets[i]->getx();
+    }
+    return position;
+}
+
+float Reimu::getbullety(){
+    float position = 0;
+    for (int i = 0; i < playerBullets.size();i++){
+        position = playerBullets[i]->gety();
+    }
+    return position;
 }

@@ -117,3 +117,12 @@ bool bullet::bulletcontain(float mx,float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 
+
+float bullet::getx(){
+    return x;
+}
+
+float bullet::gety(){
+    return y;
+}
+

@@ -60,6 +60,10 @@ public:
     
     void bulletdraw();
     void reset();
+    
+    float getbulletx();
+    float getbullety();
+    
 };
 
 #endif
