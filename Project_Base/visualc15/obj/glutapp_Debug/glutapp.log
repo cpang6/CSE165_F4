@@ -1,44 +1,19 @@
-﻿  image_DXT.c
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_dxt.c(92): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-  image_helper.c
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_helper.c(325): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_helper.c(366): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_helper.c(373): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_helper.c(415): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\image_helper.c(422): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  SOIL.c
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\soil.c(1719): warning C4018: '<=': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\soil.c(1729): warning C4018: '<': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\soil.c(1841): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-  stb_image_aug.c
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(177): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(251): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(303): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(1557): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(2394): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(2709): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(2995): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(3209): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(3548): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stb_image_aug.c(3644): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stbi_dds_aug_c.h(362): warning C4018: '>': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stbi_dds_aug_c.h(366): warning C4018: '>': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stbi_dds_aug_c.h(390): warning C4018: '<': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stbi_dds_aug_c.h(427): warning C4018: '<': signed/unsigned mismatch
-c:\users\angelo kyrilov\desktop\transparenttextures\windows\stbi_dds_aug_c.h(498): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-  Generating Code...
-AnimatedRect.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  glutapp.vcxproj -> C:\Users\Angelo Kyrilov\Desktop\TransparentTextures\visualc15\obj\glutapp_Debug\glutapp.exe
+﻿AnimatedRect.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+App.obj : error LNK2019: unresolved external symbol "public: __thiscall Reimu::Reimu(char const *,float,float,float,float)" (??0Reimu@@QAE@PBDMMMM@Z) referenced in function "public: __thiscall App::App(char const *,int,int,int,int)" (??0App@@QAE@PBDHHHH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::draw(void)" (?draw@Reimu@@QAEXXZ) referenced in function "public: virtual void __thiscall App::draw(void)" (?draw@App@@UAEXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::moveUp(float)" (?moveUp@Reimu@@QAEXM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::moveDown(float)" (?moveDown@Reimu@@QAEXM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::moveLeft(float)" (?moveLeft@Reimu@@QAEXM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::moveRight(float)" (?moveRight@Reimu@@QAEXM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::shoot(void)" (?shoot@Reimu@@QAEXXZ) referenced in function "public: virtual void __thiscall App::keyPress(unsigned char)" (?keyPress@App@@UAEXE@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::advance(void)" (?advance@Reimu@@QAEXXZ) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Reimu::bulletdraw(void)" (?bulletdraw@Reimu@@QAEXXZ) referenced in function "public: virtual void __thiscall App::draw(void)" (?draw@App@@UAEXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: __thiscall badGuys::badGuys(void)" (??0badGuys@@QAE@XZ) referenced in function "public: __thiscall App::App(char const *,int,int,int,int)" (??0App@@QAE@PBDHHHH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall badGuys::falling(void)" (?falling@badGuys@@QAEXXZ) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall badGuys::draw(void)" (?draw@badGuys@@QAEXXZ) referenced in function "public: virtual void __thiscall App::draw(void)" (?draw@App@@UAEXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: bool __thiscall badGuys::contain(float,float)" (?contain@badGuys@@QAE_NMM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: __thiscall badGuys::~badGuys(void)" (??1badGuys@@QAE@XZ) referenced in function "public: void * __thiscall badGuys::`scalar deleting destructor'(unsigned int)" (??_GbadGuys@@QAEPAXI@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall badGuys::bulletshoot(void)" (?bulletshoot@badGuys@@QAEXXZ) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall badGuys::drawbullet(void)" (?drawbullet@badGuys@@QAEXXZ) referenced in function "public: virtual void __thiscall App::draw(void)" (?draw@App@@UAEXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: bool __thiscall badGuys::bulletcotaincheck(float,float)" (?bulletcotaincheck@badGuys@@QAE_NMM@Z) referenced in function "void __cdecl app_timer(int)" (?app_timer@@YAXH@Z)
+obj\glutapp_Debug\glutapp.exe : fatal error LNK1120: 17 unresolved externals
