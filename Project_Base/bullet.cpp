@@ -36,7 +36,7 @@ bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, f
     this->w = w;
     this->h = h;
     //speed = 0.01;
-    speed = 0.1;
+    speed = 0.05;
 
     fire = false;
 

@@ -59,6 +59,7 @@ public:
     float yinc;
     
     void bulletdraw();
+    void reset();
 };
 
 #endif

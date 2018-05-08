@@ -7,21 +7,14 @@ static badGuys* pt;
 void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
+
     }
-//    singleton->myBullet->advance();
-    //singleton->mc->advance();
 
-//    pt->bulletdrop();
-//    pt ->bulletshoot();
-
-    //pt ->falling();
     singleton->mc->advance();
     pt ->falling();
     pt ->bulletshoot();
+    
     if (singleton->moving){
-//        singleton->mc->advance();
-//        pt ->falling();
-//        pt ->bulletshoot();
         if (pt->contain(singleton->mc->x, singleton->mc->y)||pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
             singleton->moving = false;
             singleton->game_over = true;
@@ -48,6 +41,8 @@ void app_timer(int value){
         //
         //        }
         //    }
+        
+        
         if (singleton->up) {
             singleton->mc->moveUp(0.02);
         }
@@ -74,26 +69,6 @@ void app_timer(int value){
     }
 }
 
-//void move(int value){
-//    singleton->myBullet->advance();
-//    if (singleton->up){
-//        singleton->mc->moveUp(0.02);
-//    }
-//    if (singleton->down){
-//        singleton->mc->moveDown(0.04);
-//    }
-//    if (singleton->left){
-//        singleton->mc->moveLeft(0.04);
-//    }
-//    if (singleton->right){
-//        singleton->mc->moveRight(0.04);
-//    }
-//    if (singleton->up || singleton->down || singleton->left || singleton->right){
-//        singleton->redraw();
-//        glutTimerFunc(32, move, value);
-//    }
-//}
-
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
     pt = new badGuys();
@@ -103,18 +78,9 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 
     int score = 0;
 
-    //    background = new TexRect("images/sky.png", -1, 1, 2, 2);
-    // ball = new TexRect("images/mushroom.png", 0, 0.67, 0.2, 0.2);
-    // platform = new TexRect("images/board.png", 0, -0.7, 0.6, 0.2);
-    
-
-
     background = new TexRect("images/background.png", -1, 1, 2, 2);
-
     mc = new Reimu("images/reimu.png", -0.1, -0.6, 0.15, 0.22);
-//    myBullet = new bullet("images/bullet.png", -0.1, -0.55, 0.10, 0.10);
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
-
 
     up = down = left = right = false;
 
@@ -203,13 +169,13 @@ void App::draw() {
 //    }
 
 
-    singleton -> mc->bulletdraw();
+    singleton ->mc->bulletdraw();
 
     pt -> drawbullet();
     pt ->draw();
     mc->draw();
     
-        gameOver->draw();
+    gameOver->draw();
 
 
 
@@ -246,7 +212,6 @@ void App::keyPress(unsigned char key) {
         delete gameOver;
         delete background;
         delete mc;
-        //delete this;
         exit(0);
     }
 
@@ -260,8 +225,6 @@ void App::keyPress(unsigned char key) {
 //        moving = true;
 //        pt->redraw();
 //    }
-
-
+    
 
 }
-
