@@ -58,9 +58,13 @@ void badGuys::addArman(float x){
 }
 
 void badGuys::draw(){
+    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->draw();
+        count++;
+        
     }
+    cout << "drawtimes count "<<count<<endl;
 }
 
 void badGuys::redraw(){
@@ -86,20 +90,28 @@ bool badGuys::contain(float x,float y){
 void badGuys::bulletdrop(){
     for (int i = 0; i < bad.size();i++){
         bad[i]->drop();
+        cout << "drop?"<<endl;
     }
 }
 
 void badGuys::bulletshoot(){
+    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->shoot();
+        count ++;
+        
     }
+    cout << "bullettimes count "<<count<<endl;
     
 }
 
 void badGuys::drawbullet(){
+    int count = 0;
     for (int i = 0; i < bad.size();i++){
         bad[i]->bulletdraw();
+        count++;
     }
+    cout << "drawbullettimes count "<<count<<endl;
 }
 
 badGuys::~badGuys(){

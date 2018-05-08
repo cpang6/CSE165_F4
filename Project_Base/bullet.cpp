@@ -89,4 +89,7 @@ void bullet::stopFire() {
     fire = false;
 }
 
+void bullet::velocity(){
+    
+}
 

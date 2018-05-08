@@ -42,6 +42,9 @@ public:
     void bulletMov (float, float, float, float, bool);
     void draw();
     void advance();
+    
+    void velocity();
+    
 //bullet for emeny
     void drop();
     

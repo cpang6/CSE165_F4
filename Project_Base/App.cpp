@@ -11,12 +11,13 @@ void app_timer(int value){
     //singleton->mc->advance();
     
 //    pt->bulletdrop();
-//    pt ->bulletshoot();
+    //pt ->bulletshoot();
     
     //pt ->falling();
     if (singleton->moving){
         singleton->mc->advance();
         pt ->falling();
+        //pt ->bulletshoot();
         if (pt->contain(singleton->mc->x, singleton->mc->y)){
             singleton->moving = false;
             singleton->game_over = true;
@@ -233,6 +234,7 @@ void App::keyPress(unsigned char key) {
     }
     
     if (key == ' '){
+        //pt ->bulletshoot();
         singleton->mc->shoot();
     }
     
