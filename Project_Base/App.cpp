@@ -4,26 +4,29 @@
 static App* singleton;
 static badGuys* pt;
 
+
 void app_timer(int value){
+
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
-    
     if (singleton->moving){
         singleton->mc->advance();
         pt ->falling();
         pt ->bulletshoot();
         
-//        if (pt->contain(singleton->mc->x, singleton->mc->y)||pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
-//            singleton->moving = false;
-//            singleton->game_over = true;
-//            singleton->gameOver->animate();
-//        }
-        if (pt->contain(singleton->mc->getbulletx(), singleton->mc->getbullety())){
+        //)
+        
+        if (pt->contain(singleton->mc->x, singleton->mc->y) || pt->bulletcotaincheck(singleton->mc->x, singleton->mc->y)){
             singleton->moving = false;
             singleton->game_over = true;
-            singleton->mc->shooting = false;
             singleton->gameOver->animate();
+        }
+        if (pt->contain(singleton->mc->getbulletx(), singleton->mc->getbullety())){
+            int b = pt->whatContain(singleton->mc->getbulletx(), singleton->mc->getbullety());
+            pt->deleteBad(b);
+            //TODO INCREMENT SCORE
+
         }
     }
     

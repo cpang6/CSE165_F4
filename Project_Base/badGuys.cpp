@@ -77,11 +77,24 @@ void badGuys::draw(){
 
 bool badGuys::contain(float x,float y){
     for (int i = 0; i < bad.size();i++){
-        if(bad[i]->contains(x,y))
+        if(bad[i]->contains(x,y)){
             return true;
-
+        }
     }
     return false;
+}
+
+int badGuys::whatContain(float x,float y){
+    for (int i = 0; i < bad.size();i++){
+        if(bad[i]->contains(x,y)){
+            return i;
+        }
+    }
+    return NULL;
+}
+
+void badGuys::deleteBad(int i){
+    bad[i]->x = 3;
 }
 
 
@@ -97,7 +110,7 @@ void badGuys::bulletshoot(){
 
     
     count +=1;
-    r = (30%10)+1;
+    r = (10%30)+1;
     //x = float((rand())/float(RAND_MAX) * (1.98)) - 0.99;
     //cout << x<< endl;
     if (count > (r+10)){

@@ -36,6 +36,10 @@ public:
     void allEnemies();
     void draw();
     bool contain(float,float);
+    int whatContain(float x,float y);
+    void deleteBad(int i);
+
+
     
     std::vector <Emeny*> bad;
     std::vector<bullet*> playerBullets;
