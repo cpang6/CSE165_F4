@@ -50,7 +50,7 @@ void badGuys::addAngelo(float x){
 void badGuys::addArman(float x){
     //cout << x<< endl;
     this ->x = x;
-    x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
+    x = float((rand())/float(RAND_MAX) * (1.6)) - 0.9;
     cout << x<< endl;
     bad.push_back(new Emeny("images/arman.png", x, 0.99, 0.4, 0.44,speed));
 
@@ -62,13 +62,18 @@ void badGuys::draw(){
     }
 }
 
-void badGuys::redraw(){
-    speed = 0.05;
-    timeinbetween = 20;
-    starttime = 0;
-    randomT = 20;
-    x = 0;
-}
+//void badGuys::redraw(){
+//    //speed = 0.01;
+//    timeinbetween = 20;
+//    starttime = 0;
+//    r = 0;
+//    //randomT = 20;
+//    addArman(x);
+//    count = 0;
+////    x = 0;
+//    //ishit = true;
+//    bad.clear();
+//}
 
 bool badGuys::contain(float x,float y){
     for (int i = 0; i < bad.size();i++){
@@ -106,10 +111,10 @@ void badGuys::bulletshoot(){
     }
 
     for (int i = 0; i < bad.size();i++){
-//        if(bad[i]->outofB()==true){
-//            //bad.erase(bad.begin()+i-1);
-//            bad[i]->cleanB(i);
-//        }
+        if(bad[i]->outofB()==true){
+            //bad.erase(bad.begin()+i-1);
+            bad[i]->cleanB(i);
+        }
         bad[i]->drop();
     }
 
