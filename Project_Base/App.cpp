@@ -190,7 +190,7 @@ void App::draw() {
 
 //    myBullet->draw();
 
-    //for (int ii = 0; ii < singleton->mc->playerBullets.size(); ii++) {
+//    for (int ii = 0; ii < singleton->mc->playerBullets.size(); ii++) {
 //      for (int jj = 0; jj < pt.size(); jj++) {
 //        //test
 //        if () { //colision detection function
@@ -200,7 +200,7 @@ void App::draw() {
 //        }
 //
 //      }
-    //}
+//    }
 
 
     singleton -> mc->bulletdraw();

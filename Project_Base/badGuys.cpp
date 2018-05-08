@@ -44,10 +44,7 @@ void badGuys::addAngelo(float x){
     x = float((rand())/float(RAND_MAX) * (1.8)) - 0.9;
     cout << x<< endl;
     bad.push_back(new Emeny("images/boss.png", x, 0.99, 0.4, 0.44,speed));
-    //playerBullets.push_back(new bullet("images/compass.png", xx+0.2/8, 0.9, 0.10, 0.10));
-//    for (int i = 0; i < bad.size();i++){
-//        bad[i]->shoot();
-//    }
+
 }
 
 void badGuys::addArman(float x){
@@ -57,7 +54,6 @@ void badGuys::addArman(float x){
     cout << x<< endl;
     bad.push_back(new Emeny("images/arman.png", x, 0.99, 0.4, 0.44,speed));
 
-    //playerBullets.push_back(new bullet("images/compass.png", xx+0.2/8, 0.9, 0.10, 0.10));
 }
 
 void badGuys::draw(){
