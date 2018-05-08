@@ -53,6 +53,9 @@ public:
     void cleanbullet();
     
     bool bulletcontain(float,float);
+    
+    float getx();
+    float gety();
 
 
 };

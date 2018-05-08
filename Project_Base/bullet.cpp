@@ -36,7 +36,7 @@ bullet::bullet (const char* filename, float x = 0, float y = 0, float w = 0.5, f
     this->w = w;
     this->h = h;
     //speed = 0.01;
-    speed = 0.1;
+    speed = 0.05;
 
     fire = false;
 
@@ -115,5 +115,14 @@ bool bullet::bullety(){
 
 bool bullet::bulletcontain(float mx,float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
+}
+
+
+float bullet::getx(){
+    return x;
+}
+
+float bullet::gety(){
+    return y;
 }
 

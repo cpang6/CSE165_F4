@@ -54,11 +54,18 @@ public:
     
     bool rising;
     bool movingLeft;
+    
+    bool shooting;
    
     float xinc;
     float yinc;
     
     void bulletdraw();
+    void reset();
+    
+    float getbulletx();
+    float getbullety();
+    
 };
 
 #endif
