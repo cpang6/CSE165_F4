@@ -57,6 +57,8 @@ public:
    
     float xinc;
     float yinc;
+    
+    void bulletdraw();
 };
 
 #endif

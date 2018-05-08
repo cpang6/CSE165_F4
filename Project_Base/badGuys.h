@@ -21,8 +21,10 @@ public:
     float timeinbetween;
     int starttime;
     int randomT;
-    int x;
+    int x,r;
+    int count;
     void redraw();
+    
     
     badGuys();
     
@@ -43,6 +45,7 @@ public:
     void bulletdrop();
     void bulletshoot();
     void drawbullet();
+    bool ishit;
     
     
     

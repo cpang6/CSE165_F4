@@ -69,17 +69,13 @@ void Reimu::shoot(){
 void Reimu::advance(){
     for(int i = 0; i < playerBullets.size(); i++){
 //        playerBullets[i]->setSpeed(speed);
-        //deletes offscreen bones
-//        if (bones[i]->x < -1.5){
-//            bones.erase(bones.begin() + i-1);
-//        }
-        //this should make bullets move up, damage implemented elsewhere
+
         if (playerBullets[i]->OOB() == false) {
-          //delete function for bullet
-          playerBullets.erase(playerBullets.begin()+i-1);
+            //delete function for bullet
+            playerBullets.erase(playerBullets.begin()+i-1);
         }
         else {
-          playerBullets[i]->advance();
+            playerBullets[i]->advance();
         }
 
     }
@@ -112,4 +108,10 @@ void Reimu::draw(){
 
 bool Reimu::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
+}
+
+void Reimu::bulletdraw(){
+    for(int i = 0; i < playerBullets.size(); i++){
+        playerBullets[i]->draw();
+    }
 }

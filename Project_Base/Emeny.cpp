@@ -88,11 +88,22 @@ void Emeny::drop(){
 }
 
 void Emeny::shoot(){
-    playerBullets.push_back(new bullet("images/compass.png", x+w/8, y, 0.10, 0.10));
+    playerBullets.push_back(new bullet("images/compass.png", x+w/7, y, 0.10, 0.10));
 }
 
 void Emeny::bulletdraw(){
     for (int i = 0; i < playerBullets.size();i++){
         playerBullets[i]->draw();
     }
+}
+
+bool Emeny::outofB(){
+    for (int i = 0; i < playerBullets.size();i++){
+        playerBullets[i]->OOB();
+    }
+    return 0;
+}
+
+void Emeny::cleanB(int i){
+    playerBullets.erase(playerBullets.begin()+i-1);
 }

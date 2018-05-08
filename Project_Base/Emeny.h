@@ -52,5 +52,8 @@ public:
     void drop();
     void shoot();
     void bulletdraw();
+    void speed();
+    bool outofB();
+    void cleanB(int i);
 };
 
